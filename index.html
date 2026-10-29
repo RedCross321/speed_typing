@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypingTest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <span>TypingTest</span>
+    </div>
+
+    <div class="stats" id="stats">
+        <div class="stat-item">
+            <div class="stat-value" id="timer">0</div>
+            <div class="stat-label">сек</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="wpm">0</div>
+            <div class="stat-label">WPM</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value" id="accuracy">100%</div>
+            <div class="stat-label">Точность</div>
+        </div>
+    </div>
+
+    <div id="startScreen">
+        <div class="controls">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="time">
+                    Время
+                </button>
+                <button class="mode-btn" data-mode="words">
+                    <span>A</span> Слова
+                </button>
+            </div>
+            <div class="divider"></div>
+            <div class="number-selector" id="timeNumbers">
+                <button class="number-btn" data-value="15">15</button>
+                <button class="number-btn" data-value="30">30</button>
+                <button class="number-btn active" data-value="60">60</button>
+                <button class="number-btn" data-value="120">120</button>
+            </div>
+            <div class="number-selector" id="wordNumbers" style="display: none;">
+                <button class="number-btn" data-value="10">10</button>
+                <button class="number-btn" data-value="25">25</button>
+                <button class="number-btn active" data-value="50">50</button>
+                <button class="number-btn" data-value="100">100</button>
+            </div>
+        </div>
+
+        <button class="start-btn" id="startBtn">
+            Начать тест
+        </button>
+    </div>
+
+    <div id="testScreen" style="display: none; width: 100%; max-width: 1000px;">
+        <div class="progress-counter" id="progressCounter"></div>
+        <div class="text-container">
+            <div class="text-display" id="textDisplay"></div>
+        </div>
+        <input type="text" class="hidden-input" id="hiddenInput" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+        <button class="restart-btn" id="restartBtn">
+            <span>⟳</span> Заново
+        </button>
+    </div>
+
+    <div id="resultsScreen" style="display: none;" class="results-container">
+        <div class="results-grid">
+            <div class="result-item">
+                <div class="result-label">Тип теста</div>
+                <div class="result-value" id="resultType">время 60</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">CPM</div>
+                <div class="result-value" id="resultCpm">0</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Точность</div>
+                <div class="result-value" id="resultAccuracy">0%</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Символы</div>
+                <div class="result-value" id="resultChars">0</div>
+            </div>
+            <div class="result-item">
+                <div class="result-label">Ошибки</div>
+                <div class="result-value" id="resultErrors">0</div>
+            </div>
+        </div>
+        <div class="results-buttons">
+            <button class="restart-btn" id="resultsRestartBtn">
+                <span>⟳</span> Заново
+            </button>
+            <button class="next-test-btn" id="nextTestBtn">
+                Следующий тест
+                <span>→</span>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
